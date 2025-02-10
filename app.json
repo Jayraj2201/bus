@@ -1,0 +1,15 @@
+{
+    "predefinedRoute": [
+        { "name": "Under Circle", "lat": 22.3083, "lng": 73.1815 },
+        { "name": "Petrofix", "lat": 22.3120, "lng": 73.1850 },
+        { "name": "Panchvati", "lat": 22.3165, "lng": 73.1890 },
+        { "name": "Shyog", "lat": 22.3201, "lng": 73.1935 },
+        { "name": "ITI", "lat": 22.3250, "lng": 73.1975 },
+        { "name": "Dashamaa", "lat": 22.3300, "lng": 73.2020 },
+        { "name": "Sureshbajiya", "lat": 22.3345, "lng": 73.2060 },
+        { "name": "Jasi Ni Rani", "lat": 22.3390, "lng": 73.2105 },
+        { "name": "Airport", "lat": 22.3450, "lng": 73.2150 },
+        { "name": "Golden", "lat": 22.3505, "lng": 73.2205 },
+        { "name": "ITM SLS Baroda University", "lat": 22.3550, "lng": 73.2250 }
+    ]
+}
