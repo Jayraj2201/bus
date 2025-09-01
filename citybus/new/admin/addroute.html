@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Bus Route</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1.5px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #4a90e2;
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1);
+    }
+
+    .form-group label {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      background-color: white;
+      padding: 0 5px;
+      color: #666;
+      font-size: 14px;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group textarea:focus + label,
+    .form-group textarea:not(:placeholder-shown) + label {
+      top: -10px;
+      font-size: 12px;
+      color: #4a90e2;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #4a90e2;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357abd;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Add New Bus Route</h2>
+    <form action="./addroute.php" method="POST">
+      <div class="form-group">
+        <input type="text" id="route_name" name="route_name" placeholder=" " required>
+        <label for="route_name">Route Name</label>
+      </div>
+
+      <div class="form-group">
+        <input type="time" id="start_time" name="start_time" placeholder=" " required>
+        <label for="start_time">Start Time</label>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="total_stops" name="total_stops" placeholder=" " required>
+        <label for="total_stops">Total Stops</label>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="start_point" name="start_point" placeholder=" " required>
+        <label for="start_point">Start Point</label>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="end_point" name="end_point" placeholder=" " required>
+        <label for="end_point">End Point</label>
+      </div>
+
+      <div class="form-group">
+        <textarea id="stops" name="stops" rows="3" placeholder=" " required></textarea>
+        <label for="stops">Stops (comma separated)</label>
+      </div>
+
+      <div class="form-group">
+        <input type="number" step="0.01" id="fare" name="fare" placeholder=" " required>
+        <label for="fare">Fare (₹)</label>
+      </div>
+
+      <button type="submit">Add Route</button>
+    </form>
+  </div>
+
+</body>
+</html>  

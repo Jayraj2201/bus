@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusTracker - Real-time Bus Tracking</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Bus<span>Tracker</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="app.html">Trackbus</a></li>
+                    <li><a href="rout_static.html">Route</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="login.html" class="btn loginbtn">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>ITM Bus Live Tracking <br></h1>
+                    <p>Never miss your bus again. BusTracker provides real-time information about bus locations, arrival
+                        times, and routes to make your commute smooth and predictable.</p>
+                    <a href="register.html" class="btn">Get Started</a>
+                </div>
+                <div class="hero-image slider">
+                    <div class="slides">
+                        <img class="slide active"
+                            src="https://tse3.mm.bing.net/th?id=OIP.ueYs4X1vVr17tkLECu2e7wHaE8&pid=Api&P=0&h=220" alt="ITM Bus 1">
+                        <img class="slide" src="https://images.shiksha.com/mediadata/images/1493008289php2PdUiZ.png"
+                            alt="Bus 2">
+                        <img class="slide" src="https://americanprofile.com/wp-content/uploads/2012/08/school-bus.jpg"
+                            alt="ITM Bus 3">
+                    </div>
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                    <div class="dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Features</h2>
+                <p>Discover how BusTracker makes your daily commute easier and more efficient</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i>🚌</i>
+                    <h3>Real-Time Tracking</h3>
+                    <p>Track your bus in real-time with GPS precision and know exactly when it will arrive at your stop.
+                    </p>
+                </div>
+                <!-- <div class="feature-card">
+                    <i>🗺️</i>
+                    <h3>Interactive Maps</h3>
+                    <p>View all bus routes and stops on an interactive map with live updates and traffic conditions.</p>
+                </div> -->
+                <div class="feature-card">
+                    <i>⏰</i>
+                    <h3>Arrival Alerts</h3>
+                    <p>Set up alerts to notify you when your bus is approaching your stop or if there are any delays.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <i>📱</i>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access BusTracker from any device with a responsive design that works on smartphones, tablets,
+                        and desktops.</p>
+                </div>
+                <div class="feature-card">
+                    <i>🔄</i>
+                    <h3>Route Planning</h3>
+                    <p>Plan your journey with multiple route options based on time, distance, and number of transfers.
+                    </p>
+                </div>
+                <!-- <div class="feature-card">
+                    <i>📊</i>
+                    <h3>Analytics Dashboard</h3>
+                    <p>View your travel history, favorite routes, and personal usage analytics on your dashboard.</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to transform your commute?</h2>
+            <p>Join thousands of commuters who rely on BusTracker to plan their daily journeys. Sign up today and never
+                miss your bus again!</p>
+            <a href="register.html" class="btn">Sign Up Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BusTracker</h3>
+                    <p>Making public transportation reliable, accessible, and stress-free for everyone.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@bustracker.com</p>
+                    <p>Phone: +91</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BusTracker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for landing page animations or interactions can go here
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>

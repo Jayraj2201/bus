@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Schedule</title>
+</head>
+<body>
+    <h2>Bus Schedule for Route 25</h2>
+    <button onclick="fetchSchedule(25)">Show Schedule</button>
+    <table border="1" id="scheduleTable" style="display:none; margin-top: 20px;">
+        <thead>
+            <tr>
+                <th>Stop Name</th>
+                <th>Departure Time</th>
+            </tr>
+        </thead>
+        <tbody id="scheduleBody"></tbody>
+    </table>
+
+    <script>
+       function fetchSchedule(route_id) {
+    fetch(`http://localhost/check/citybus/route_static.php?route_id=${route_id}`)
+        .then(response => {
+            console.log("Raw response:", response);
+            return response.json();
+        })
+        .then(data => {
+            console.log("Parsed JSON:", data);
+
+            if (!Array.isArray(data)) {
+                console.error("Unexpected response format:", data);
+                alert("Error: Received unexpected response format.");
+                return;
+            }
+
+            let tableBody = document.getElementById("scheduleBody");
+            tableBody.innerHTML = ""; // Clear existing data
+
+            data.forEach(stop => {
+                let row = `<tr>
+                    <td>${stop.stop_name}</td>
+                    <td>${stop.departure_time}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+
+            document.getElementById("scheduleTable").style.display = "block";
+        })
+        .catch(error => console.error("Error fetching data:", error));
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+#map {
+    height: 500px;
+    width: 90%;
+    margin: 20px auto;
+    border: 2px solid black;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#stopTracking {
+    background-color: red;
+}
+
+#stopTracking:hover {
+    background-color: darkred;
+}
+
+#status, #liveDistance, #eta {
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 16px;
+}

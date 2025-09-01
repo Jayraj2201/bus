@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Routes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            display: none;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Select a Route</h2>
+    <div class="button-container">
+        <script>
+            for (let i = 1; i <= 20; i++) {
+                document.write(`<button onclick="fetchRoute(${i})">Route ${i}</button>`);
+            }
+        </script>
+    </div>
+
+    <table id="routeTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Route Name</th>
+                <th>Start Time</th>
+                <th>Total Stops</th>
+                <th>Start Point</th>
+                <th>End Point</th>
+                <th>Stops</th>
+                <th>Fare</th>
+            </tr>
+        </thead>
+        <tbody id="routeData"></tbody>
+    </table>
+
+    <script>
+       function fetchRoute(routeId) {
+            fetch(`http://localhost/check/collage/route_static.php?route_id=${routeId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.text(); // Read response as text first
+                })
+                .then(text => {
+                    console.log("Raw Response:", text); // Debugging
+
+                    try {
+                        let data = JSON.parse(text); // Convert to JSON
+
+                        if (data.error) {
+                            alert("No data found!");
+                            document.getElementById("routeTable").style.display = "none";
+                        } else {
+                            document.getElementById("routeTable").style.display = "table";
+                            document.getElementById("routeData").innerHTML = `
+                                <tr>
+                                    <td>${data.id}</td>
+                                    <td>${data.route_name}</td>
+                                    <td>${data.start_time}</td>
+                                    <td>${data.total_stops}</td>
+                                    <td>${data.start_point}</td>
+                                    <td>${data.end_point}</td>
+                                    <td>${data.stops}</td>
+                                    <td>${data.fare}</td>
+                                </tr>
+                            `;
+                        }
+                    } catch (error) {
+                        console.error("JSON Parse Error:", error);
+                        alert("Invalid response format. Check console for details.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching data:", error);
+                    alert("Failed to fetch route data. Check console for details.");
+                });
+        }
+    </script>
+
+</body>
+</html>
+

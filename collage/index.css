@@ -1,0 +1,369 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #4a6cf7;
+}
+
+.logo span {
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #4a6cf7;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #4a6cf7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #3a5ddb;
+}
+
+
+.loginbtn {
+    background-color: #4a6cf7;
+    color: white !important;
+    font-weight: 600;
+    font-size: 13px;
+    /* Increased font size */
+    letter-spacing: 0.5px;
+    padding: 5px 25px;
+    /* Increased padding for larger button */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Space between icon and text */
+    box-shadow: 0 5px 15px rgba(10, 10, 10, 0.3);
+    text-transform: uppercase;
+    /* Make text uppercase for emphasis */
+}
+
+/* Hero Section */
+.hero {
+    padding: 150px 0 100px;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://placehold.co/1200x800') center/cover no-repeat;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.hero-image.slider {
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.hero-image .slides {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.hero-image .slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.hero-image .slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.hero-image .prev,
+.hero-image .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.hero-image .prev {
+    left: 10px;
+}
+.hero-image .next {
+    right: 10px;
+}
+
+.hero-image .dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hero-image .dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    display: inline-block;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.hero-image .dot.active {
+    background-color: #333;
+}
+
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    font-size: 40px;
+    color: #4a6cf7;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #666;
+}
+
+/* CTA Section */
+.cta {
+    padding: 80px 0;
+    background-color: #4a6cf7;
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta .btn {
+    background-color: white;
+    color: #4a6cf7;
+    padding: 12px 30px;
+    font-size: 18px;
+}
+
+.cta .btn:hover {
+    background-color: #f5f5f5;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-column p {
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul a:hover {
+    color: #4a6cf7;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: #bbb;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        margin-top: 20px;
+    }
+
+    .nav-links li {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+}

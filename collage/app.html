@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Location on Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <h2>Live Location on Map</h2>
+
+    <button id="startTracking">📍 Start Sharing Location</button>
+    <button id="stopTracking">🛑 Stop Tracking</button>
+
+    <p id="status">Click "📍 Start Sharing Location" to begin tracking.</p>
+
+    <!-- ✅ Added live distance and ETA display -->
+    <p id="liveDistance">📏 Live Distance: 0 km</p>
+    <p id="eta">🕒 ETA: N/A</p>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

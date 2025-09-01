@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Tracking Option</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      animation: zoomIn 0.8s ease forwards;
+    }
+
+    .container h2 {
+      color: #ffffff;
+      font-size: 26px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .track-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      margin: 12px 0;
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .track-btn:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .icon {
+      font-size: 20px;
+      margin-right: 12px;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      .track-btn {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🌐 Select Tracking Option</h2>
+    <a href="/check/collage/index.html" class="track-btn">
+      <span class="icon">🎓</span> College Tracking
+    </a>
+    <a href="/check/stbus/index.html" class="track-btn">
+      <span class="icon">🚌</span> ST Bus Tracking
+    </a>
+    <a href="/check/citybus/index.html" class="track-btn">
+      <span class="icon">🚍</span> City Bus Tracking
+    </a>
+  </div>
+</body>
+</html>
